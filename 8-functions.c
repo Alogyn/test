@@ -1,18 +1,20 @@
 #include "main.h"
+
 /**
- * print_long_int - prints a long integer
- * @arg_list: input string
- * @buffer: buffer pointer
- * @index: index for buffer pointer
- * Return: number of chars printed.
- */
+  * print_long_int - Prints long integers
+  *
+  * @arg_list: Input integers argument (int)
+  * @buffer: Buffer array (char)
+  * @index: Number of buffer index (int)
+  *
+  * Return: The length of integers output
+  */
+
 int print_long_int(va_list arg_list, char *buffer, unsigned int index)
 {
-	long int number;
-	unsigned long int n, temp_num, i, diviser, check_negative;
+	long int number = va_arg(arg_list, long int);
+	unsigned long int n, temp_num, i, diviser, check_negative = 0;
 
-	number = va_arg(arg_list, long int);
-	check_negative = 0;
 	if (number < 0)
 	{
 		n = number * -1;
@@ -39,19 +41,20 @@ int print_long_int(va_list arg_list, char *buffer, unsigned int index)
 }
 
 /**
- * print_long_dig - prints a long integer
- * @arg_list: input string
- * @buffer: buffer pointer
- * @index: index for buffer pointer
- * Return: number of chars printed.
- */
+  * print_long_int - Prints long digits
+  *
+  * @arg_list: Input digits argument (int)
+  * @buffer: Buffer array (char)
+  * @index: Number of buffer index (int)
+  *
+  * Return: The length of digits output
+  */
+
 int print_long_dig(va_list arg_list, char *buffer, unsigned int index)
 {
-	long int number;
-	unsigned long int n, temp_num, i, diviser, check_negative;
+	long int number = va_arg(arg_list, long int);
+	unsigned long int n, temp_num, i, diviser, check_negative = 0;
 
-	number = va_arg(arg_list, long int);
-	check_negative = 0;
 	if (number < 0)
 	{
 		n = number * -1;
@@ -78,12 +81,15 @@ int print_long_dig(va_list arg_list, char *buffer, unsigned int index)
 }
 
 /**
- * print_long_uns - prints a long unsigned integer
- * @arg_list: number to print
- * @buffer: buffer pointer
- * @index: index for buffer pointer
- * Return: number of chars printed.
- */
+  * print_long_int - Prints long unsigned characters
+  *
+  * @arg_list: Input unsigned characters argument (int)
+  * @buffer: Buffer array (char)
+  * @index: Number of buffer index (int)
+  *
+  * Return: The length of unsigned characters output
+  */
+
 int print_long_uns(va_list arg_list, char *buffer, unsigned int index)
 {
 	unsigned long int n, temp_num, i, diviser;
@@ -104,13 +110,6 @@ int print_long_uns(va_list arg_list, char *buffer, unsigned int index)
 }
 
 
-/**
- * print_long_oct - prints long decimal number in octal
- * @arg_list: input number
- * @buffer: buffer pointer
- * @index: index for buffer pointer
- * Return: number of chars printed.
- */
 int print_long_oct(va_list arg_list, char *buffer, unsigned int index)
 {
 	long int number, i, check_negative, count, n;
@@ -149,19 +148,21 @@ int print_long_oct(va_list arg_list, char *buffer, unsigned int index)
 }
 
 /**
- * print_long_hexa - prints a long decimal in hexa
- * @arg_list: input string
- * @buffer: buffer pointer
- * @index: index for buffer pointer
- * Return: number of chars printed
- */
+  * print_long_int - Prints long hexadicimal
+  *
+  * @arg_list: Input hexadicimal argument (int)
+  * @buffer: Buffer array (char)
+  * @index: Number of buffer index (int)
+  *
+  * Return: The length of hexadicimal output
+  */
+
 int print_long_hexa(va_list arg_list, char *buffer, unsigned int index)
 {
-	long int number, i, check_negative, count, n;
+	long int number = va_arg(arg_list, long int);;
+	long int i, check_negative = 0, count, n;
 	char *hexa, *binary;
 
-	number = va_arg(arg_list, long int);
-	check_negative = 0;
 	if (number == 0)
 	{
 		index = _puts(buffer, '0', index);
@@ -193,19 +194,21 @@ int print_long_hexa(va_list arg_list, char *buffer, unsigned int index)
 }
 
 /**
- * print_long_uhexa - prints a long decimal in hexa
- * @arg_list: The character to print
- * @buffer: buffer pointer
- * @index: index for buffer pointer
- * Return: number of chars printed
- */
+  * print_long_int - Prints long hexadicimal
+  *
+  * @arg_list: Input hexadicimal argument (int)
+  * @buffer: Buffer array (char)
+  * @index: Number of buffer index (int)
+  *
+  * Return: The length of hexadicimal output
+  */
+
 int print_long_uhexa(va_list arg_list, char *buffer, unsigned int index)
 {
-	long int number, i, check_negative, count, n;
+	long int number = va_arg(arg_list, long int);
+	long int i, check_negative = 0, count, n;
 	char *hexa, *binary;
 
-	number = va_arg(arg_list, long int);
-	check_negative = 0;
 	if (number == 0)
 	{
 		index = _puts(buffer, '0', index);
@@ -234,31 +237,4 @@ int print_long_uhexa(va_list arg_list, char *buffer, unsigned int index)
 	free(binary);
 	free(hexa);
 	return (count);
-}
-
-/**
- * input_long_oct - calculates a long octal number
- *
- * @bin: array where is stored the binary.
- * @oct: array where is stored the octal.
- *
- * Return: binary array.
- */
-char *input_long_oct(char *bin, char *oct)
-{
-	int n, i, j, m, max_size;
-
-	oct[22] = '\0';
-	for (i = 63, m = 21; i >= 0; i--, m--)
-	{
-		if (i > 0)
-			max_size = 4;
-		else
-			max_size = 1;
-		for (n = 0, j = 1; j <= max_size; j *= 2, i--)
-			n = ((bin[i] - '0') * j) + n;
-		i++;
-		oct[m] = n + '0';
-	}
-	return (oct);
 }

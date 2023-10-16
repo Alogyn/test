@@ -1,11 +1,14 @@
 #include "main.h"
 
 /**
- * specifiers_counter - returns the amount of identifiers.
- * @s: argument indentifier
- * @index: index of argument identifier.
- * Return: amount of identifiers.
- */
+  * specifier_func - Checks and count the number of specifiers format
+  *
+  * @s: Input string argument (char)
+  * @index: Number of buffer index (int)
+  *
+  * Return: Number of specifiers
+  */
+
 int specifiers_counter(const char *s, int index)
 {
 	int i = 0, j = 0, n;
@@ -52,11 +55,13 @@ int specifiers_counter(const char *s, int index)
 }
 
 /**
- * specifier_func - selects the correct function to perform the operation.
- * @s: argument indentifier
- * @index: index for argument indentifier
- * Return: pointer to a function.
- */
+  * specifier_func - Checks ans slecter the specifier format
+  *
+  * @s: Input string argument (char)
+  * @index: Number of buffer index (int)
+  *
+  * Return: The pointer to function
+  */
 int (*specifier_func(const char *s, int index))(va_list, char *, unsigned int)
 {
 	int i = 0, j = 0, n;

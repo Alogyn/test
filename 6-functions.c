@@ -10,7 +10,7 @@
  * Return: The length of address
  */
 
-int print_address(va_list arg_lisr, char *buffer, unsigned int index)
+int print_address(va_list arg_list, char *buffer, unsigned int index)
 {
 	void *address;
 	long int number;
@@ -18,7 +18,7 @@ int print_address(va_list arg_lisr, char *buffer, unsigned int index)
 	char *hexa, *binary;
 	char none[] = "(nil)";
 
-	address = (va_arg(arg_lisr, void *));
+	address = (va_arg(arg_list, void *));
 	if (address == NULL)
 	{
 		for (i = 0; none[i]; i++)
