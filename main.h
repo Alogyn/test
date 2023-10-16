@@ -41,7 +41,7 @@ int _putchar(char *buffer, unsigned int index);
 int print_unsigned_str(va_list arg_list, char *buffer, unsigned int index);
 
 /* Task 6: Function to prints an andress */
-int print_address(va_list a, char *buf, unsigned int ibuf);
+int print_address(va_list a, char *buf, unsigned int index);
 
 /* Task 7: Functions to prints an integers or digits with flag */
 int print_plus_int(va_list arg_list, char *buffer, unsigned int index);
