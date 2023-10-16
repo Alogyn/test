@@ -31,7 +31,7 @@ int print_unsigned(va_list arg_list, char *buffer, unsigned int index);
 /* Task 3: Functions to convertes and prints integers to upper and lower hexadicimal */
 int print_lower_hexa(va_list arg_list, char *buffer, unsigned int index);
 int print_upper_hexa(va_list arg_list, char *buffer, unsigned int index);
-char *input_to_hexa(char *bin, char *hex, int check_upper, int max_size)
+char *input_to_hexa(char *bin, char *hex, int check_upper, int max_size);
 
 /* Task 4: Functions to minimises the use of 'write()' and prints the 'char' or 'str'*/
 unsigned int _puts(char *buffer, char c, unsigned int index);
@@ -89,6 +89,9 @@ typedef struct specif
 	int (*f)(va_list, char *, unsigned int);
 } specif_t;
 
+/* '_putchar function' */
+unsigned int _puts(char *buffer, char c, unsigned int index);
+int _putchar(char *buffer, unsigned int index);
 
 /* */
 int (*specifier_functions(const char *s, int index))(va_list, char *, unsigned int);
