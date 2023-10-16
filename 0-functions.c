@@ -15,7 +15,7 @@ int print_character(va_list arg_list, char *buffer, unsigned int index)
 	char c;
 
 	c = va_arg(arg_list, int);
-	_puts(buf, c, index);
+	_puts(buffer, c, index);
 
 	return (1);
 }
