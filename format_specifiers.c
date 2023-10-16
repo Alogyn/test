@@ -52,12 +52,12 @@ int specifiers_counter(const char *s, int index)
 }
 
 /**
- * specifier_functions - selects the correct function to perform the operation.
+ * specifier_func - selects the correct function to perform the operation.
  * @s: argument indentifier
  * @index: index for argument indentifier
  * Return: pointer to a function.
  */
-int (*specifier_functions(const char *s, int index))(va_list, char *, unsigned int)
+int (*specifier_func(const char *s, int index))(va_list, char *, unsigned int)
 {
 	int i = 0, j = 0, n;
 	specif_t founder[] = {

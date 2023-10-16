@@ -94,7 +94,7 @@ unsigned int _puts(char *buffer, char c, unsigned int index);
 int _putchar(char *buffer, unsigned int index);
 
 /* Functions to determine end send the function for a specifier */
-int (*specifier_functions(const char *s, int index))(va_list, char *, unsigned int);
+int (*specifier_func(const char *s, int index))(va_list, char *, unsigned int);
 int specifiers_counter(const char *s, int index);
 
 #endif /* MAIN_H */

@@ -29,7 +29,7 @@ int _printf(const char *format, ...)
 				return (-1);
 			}
 			else
-			{	funct = specifier_functions(format, i + 1);
+			{	funct = specifier_func(format, i + 1);
 				if (funct == NULL)
 				{
 					if (format[i + 1] == ' ' && !format[i + 2])
