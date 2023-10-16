@@ -193,36 +193,3 @@ int print_upper_hexa(va_list arg_list, char *buffer, unsigned int index)
 	free(hexa);
 	return (count);
 }
-
-/**
-  * input_to_hexa - Prints hexadicimal numbers
-  *
-  * @bin: Input Binary pointer (char)
-  * @hex: Input Hexadicimal pointer (char)
-  * @check_upper: Checks the format of the input (int)
-  * @max_size: Max size for the hexadicimal output(int)
-  *
-  * Return: the length of a hexadicimal numbers
-  */
-
-char *input_to_hexa(char *bin, char *hex, int check_upper, int max_size)
-{
-	int n, i, j, letter_change;
-
-	hex[max_size] = '\0';
-	if (check_upper)
-		letter_change = 55;
-	else
-		letter_change = 87;
-	for (i = (max_size * 4) - 1; i >= 0; i--)
-	{
-		for (n = 0, j = 1; j <= 8; j *= 2, i--)
-			n = ((bin[i] - '0') * j) + n;
-		i++;
-		if (n < 10)
-			hex[i / 4] = n + 48;
-		else
-			hex[i / 4] = n + letter_change;
-	}
-	return (hex);
-}
