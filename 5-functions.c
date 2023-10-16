@@ -26,8 +26,8 @@ int print_unsigned_str(va_list arg_list, char *buffer, unsigned int index)
 			index = _puts(buffer, '\\', index);
 			index = _puts(buffer, 'x', index);
 			n = str[i];
-			binary = fill_binary_array(binary, n, 0, 32);
-			hexa = fill_hex_array(binary, hexa, 1, 8);
+			binary = input_to_binary(binary, n, 0, 32);
+			hexa = input_to_hexa(binary, hexa, 1, 8);
 			index = _puts(buffer, hexa[6], index);
 			index = _puts(buffer, hexa[7], index);
 			sum += 3;

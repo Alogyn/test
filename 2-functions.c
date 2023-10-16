@@ -36,7 +36,7 @@ int print_binary(va_list arg_list, char *buffer, unsigned int index)
 			j = 1;
 		if (j == 1)
 		{
-			index = _puts(buffer, binary[i], indec);
+			index = _puts(buffer, binary[i], index);
 			count++;
 		}
 	}
