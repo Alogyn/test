@@ -12,7 +12,7 @@
 
 int print_plus_int(va_list arg_list, char *buffer, unsigned int index)
 {
-	int number = va_arg(arg_list, int);;
+	int number = va_arg(arg_list, int);
 	unsigned int n, temp_num, i, diviser;
 
 	if (number < 0)
@@ -51,7 +51,7 @@ int print_plus_int(va_list arg_list, char *buffer, unsigned int index)
 
 int print_plus_dig(va_list arg_list, char *buffer, unsigned int index)
 {
-	int number = va_arg(arg_list, int);;
+	int number = va_arg(arg_list, int);
 	unsigned int n, temp_num, i, diviser;
 
 	if (number < 0)

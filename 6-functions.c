@@ -65,10 +65,9 @@ int print_address(va_list arg_lisr, char *buffer, unsigned int index)
 
 int print_space_int(va_list arg_list, char *buffer, unsigned int index)
 {
-	int number;
+	int number = va_arg(arg_list, int);
 	unsigned int n, temp_num, i, diviser;
 
-	number = va_arg(arg_list, int);
 	if (number < 0)
 	{
 		n = number * -1;
@@ -105,10 +104,9 @@ int print_space_int(va_list arg_list, char *buffer, unsigned int index)
 
 int print_space_dig(va_list arg_list, char *buffer, unsigned int index)
 {
-	int number;
+	int number = va_arg(arg_list, int);
 	unsigned int n, temp_num, i, diviser;
 
-	number = va_arg(arg_list, int);
 	if (number < 0)
 	{
 		n = number * -1;
