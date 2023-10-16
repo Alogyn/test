@@ -9,16 +9,16 @@
  */
 int main(void)
 {
-    int len;
+    int char_counter;
     int len2;
     unsigned int ui;
     void *addr;
 
-    len = _printf("Let's try to printf a simple sentence.\n");
+    char_counter = _printf("Let's try to printf a simple sentence.\n");
     len2 = printf("Let's try to printf a simple sentence.\n");
     ui = (unsigned int)INT_MAX + 1024;
     addr = (void *)0x7ffe637541f0;
-    _printf("Length:[%d, %i]\n", len, len);
+    _printf("Length:[%d, %i]\n", char_counter, char_counter);
     printf("Length:[%d, %i]\n", len2, len2);
     _printf("Negative:[%d]\n", -762534);
     printf("Negative:[%d]\n", -762534);
@@ -34,9 +34,9 @@ int main(void)
     printf("String:[%s]\n", "I am a string !");
     _printf("Address:[%p]\n", addr);
     printf("Address:[%p]\n", addr);
-    len = _printf("Percent:[%%]\n");
+    char_counter = _printf("Percent:[%%]\n");
     len2 = printf("Percent:[%%]\n");
-    _printf("Len:[%d]\n", len);
-    printf("Len:[%d]\n", len2);
+    _printf("char_counter:[%d]\n", char_counter);
+    printf("char_counter:[%d]\n", len2);
     return (0);
 }

@@ -34,20 +34,20 @@ int _printf(const char *format, ...)
 				{
 					if (format[i + 1] == ' ' && !format[i + 2])
 						return (-1);
-					_puts(temp, format[i], index), len++, i--;
+					_puts(temp, format[i], index), char_counter++, i--;
 				}
 				else
 				{
-					len += funct(arg_list, temp, index);
+					char_counter += funct(arg_list, temp, index);
 					i += specifiers_counter(format, i + 1);
 				}
 			} i++;
 		}
 		else
-			_puts(temp, format[i], index), len++;
-		for (index = len; index > 1024; index -= 1024)
+			_puts(temp, format[i], index), char_counter++;
+		for (index = char_counter; index > 1024; index -= 1024)
 			;
 	}
 	_putchar(temp, index), free(temp), va_end(arg_list);
-	return (len);
+	return (char_counter);
 }
