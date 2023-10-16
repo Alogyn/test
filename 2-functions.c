@@ -12,11 +12,10 @@
 
 int print_binary(va_list arg_list, char *buffer, unsigned int index)
 {
-	int number, count, i, j, check_negative;
+	int number, count = 0, i = 0, j = 0, check_negative = 0;
 	char *binary;
 
 	number = va_arg(arg_list, int);
-	check_negative = 0;
 	if (number == 0)
 	{
 		index = _puts(buffer, '0', index);
@@ -29,8 +28,7 @@ int print_binary(va_list arg_list, char *buffer, unsigned int index)
 	}
 	binary = malloc(sizeof(char) * (32 + 1));
 	binary = input_to_binary(binary, number, check_negative, 32);
-	j = 0;
-	for (count = i = 0; binary[i]; i++)
+	for (; binary[i]; i++)
 	{
 		if (j == 0 && binary[i] == '1')
 			j = 1;

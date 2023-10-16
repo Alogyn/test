@@ -50,14 +50,14 @@ int print_string(va_list arg_list, char *buffer, unsigned int index)
 		index = _puts(buffer, str[i], index);
 		i++;
 	}
-	
+
 	return (i);
 }
 
 /**
   * print_percent - Prints a percent sign
   *
-  * to showw it as a percentage 
+  * to showw it as a percentage
   * @a: Input character (unused)
   * @buffer: Buffer array (char)
   * @i: Number of buffer index (int)
