@@ -12,7 +12,7 @@
 
 int print_character(va_list arg_list, char *buffer, unsigned int index)
 {
-	_puts(buffer, va_arg(arg_list, int);, index);
+	_puts(buffer, va_arg(arg_list, int), index);
 
 	return (1);
 }
