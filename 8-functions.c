@@ -159,7 +159,7 @@ int print_long_oct(va_list arg_list, char *buffer, unsigned int index)
 
 int print_long_hexa(va_list arg_list, char *buffer, unsigned int index)
 {
-	long int number = va_arg(arg_list, long int);;
+	long int number = va_arg(arg_list, long int);
 	long int i, check_negative = 0, count, n;
 	char *hexa, *binary;
 
