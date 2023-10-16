@@ -13,11 +13,10 @@
 
 int print_octal(va_list arg_list, char *buffer, unsigned int index)
 {
-	int number, i, check_negative, count, j;
+	int number = va_arg(arg_list, int);
+	int i = 0, check_negative = 0, count, j = 0;
 	char *octal, *binary;
 
-	number = va_arg(arg_list, int);
-	check_negative = 0;
 	if (number == 0)
 	{
 		index = _puts(buffer, '0', index);
@@ -32,7 +31,7 @@ int print_octal(va_list arg_list, char *buffer, unsigned int index)
 	binary = input_to_binary(binary, number, check_negative, 32);
 	octal = malloc(sizeof(char) * (11 + 1));
 	octal = input_to_octal(binary, octal);
-	for (j = i = count = 0; octal[i]; i++)
+	for (count = 0; octal[i]; i++)
 	{
 		if (octal[i] != '0' && j == 0)
 			j = 1;
@@ -87,17 +86,16 @@ char *input_to_octal(char *bin, char *oct)
 
 int print_unsigned(va_list arg_list, char *buffer, unsigned int index)
 {
-	unsigned int number, temp, i, diviser;
+	unsigned int number = va_arg(arg_list, unsigned int);
+	unsigned int i = 0, temp, diviser = 1;
 
-	number = va_arg(arg_list, unsigned int);
 	temp = number;
-	diviser = 1;
 	while (temp > 9)
 	{
 		diviser *= 10;
 		temp /= 10;
 	}
-	for (i = 0; diviser > 0; diviser /= 10, i++)
+	for (; diviser > 0; diviser /= 10, i++)
 	{
 		index = _puts(buffer, ((number / diviser) % 10) + '0', index);
 	}
@@ -117,11 +115,10 @@ int print_unsigned(va_list arg_list, char *buffer, unsigned int index)
 
 int print_lower_hexa(va_list arg_list, char *buffer, unsigned int index)
 {
-	int number, i, check_negative, count, n;
+	int number = va_arg(arg_list, int);
+	int i = 0, check_negative = 0, count, n = 0;
 	char *hexa, *binary;
 
-	number = va_arg(arg_list, int);
-	check_negative = 0;
 	if (number == 0)
 	{
 		index = _puts(buffer, '0', index);
@@ -136,7 +133,7 @@ int print_lower_hexa(va_list arg_list, char *buffer, unsigned int index)
 	binary = input_to_binary(binary, number, check_negative, 32);
 	hexa = malloc(sizeof(char) * (8 + 1));
 	hexa = input_to_hexa(binary, hexa, 0, 8);
-	for (n = i = count = 0; hexa[i]; i++)
+	for (count = 0; hexa[i]; i++)
 	{
 		if (hexa[i] != '0' && n == 0)
 			n = 1;
@@ -164,11 +161,10 @@ int print_lower_hexa(va_list arg_list, char *buffer, unsigned int index)
 
 int print_upper_hexa(va_list arg_list, char *buffer, unsigned int index)
 {
-	int number, i, check_negative, count, n;
+	int number = va_arg(arg_list, int);
+	int i, check_negative = 0, count, n;
 	char *hexa, *binary;
 
-	number = va_arg(arg_list, int);
-	check_negative = 0;
 	if (number == 0)
 	{
 		index = _puts(buffer, '0', index);

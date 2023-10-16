@@ -17,7 +17,7 @@ int print_integer(va_list arg_list, char *buffer, unsigned int index)
 
 	if (number < 0)
 	{
-		num = number * - 1;
+		num = number * -1;
 		index = _puts(buffer, '-', index);
 		negative_checker = 1;
 	}
@@ -58,7 +58,7 @@ int print_digit(va_list arg_list, char *buffer, unsigned int index)
 
 	if (number < 0)
 	{
-		num = number * - 1;
+		num = number * -1;
 		index = _puts(buffer, '-', index);
 		negative_checker = 1;
 	}
