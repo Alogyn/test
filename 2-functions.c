@@ -12,10 +12,10 @@
 
 int print_binary(va_list arg_list, char *buffer, unsigned int index)
 {
-	int number, count = 0, i = 0, j = 0, check_negative = 0;
+	int number = va_arg(arg_list, int);
+	int count = 0, i = 0, j = 0, check_negative = 0;
 	char *binary;
 
-	number = va_arg(arg_list, int);
 	if (number == 0)
 	{
 		index = _puts(buffer, '0', index);
@@ -55,10 +55,13 @@ int print_binary(va_list arg_list, char *buffer, unsigned int index)
 
 char *input_to_binary(char *binary, long int number, int check_negative, int max_size)
 {
-	int i;
+	int i = 0;
 
-	for (i = 0; i < max_size; i++)
+	while (i < max_size)
+	{
 		binary[i] = '0';
+		i++;
+	}
 	binary[max_size] = '\0';
 	for (i = max_size - 1; number > 1; i--)
 	{
