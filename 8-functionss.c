@@ -133,7 +133,7 @@ int print_short_oct(va_list arg_list, char *buffer, unsigned int index)
 	binary = malloc(sizeof(char) * (16 + 1));
 	binary = input_to_binary(binary, number, check_negative, 16);
 	octal = malloc(sizeof(char) * (6 + 1));
-	octal = input_to_short_oct(binary, octal);
+	octal = input_short_oct(binary, octal);
 	for (n = i = count = 0; octal[i]; i++)
 	{
 		if (octal[i] != '0' && n == 0)
@@ -242,14 +242,14 @@ int print_short_uhexa(va_list arg_list, char *buffer, unsigned int index)
 }
 
 /**
- * input_to_short_oct - calculates a short octal number
+ * input_short_oct - calculates a short octal number
  *
  * @bin: array where is stored the binary.
  * @oct: array where is stored the octal.
  *
  * Return: binary array.
  */
-char *input_to_short_oct(char *bin, char *oct)
+char *input_short_oct(char *bin, char *oct)
 {
 	int n, i, j, m, max_size;
 

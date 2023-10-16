@@ -132,7 +132,7 @@ int print_long_oct(va_list arg_list, char *buffer, unsigned int index)
 	binary = malloc(sizeof(char) * (64 + 1));
 	binary = input_to_binary(binary, number, check_negative, 64);
 	octal = malloc(sizeof(char) * (22 + 1));
-	octal = input_to_long_oct(binary, octal);
+	octal = input_long_oct(binary, octal);
 	for (n = i = count = 0; octal[i]; i++)
 	{
 		if (octal[i] != '0' && n == 0)
@@ -237,14 +237,14 @@ int print_long_uhexa(va_list arg_list, char *buffer, unsigned int index)
 }
 
 /**
- * input_to_long_oct - calculates a long octal number
+ * input_long_oct - calculates a long octal number
  *
  * @bin: array where is stored the binary.
  * @oct: array where is stored the octal.
  *
  * Return: binary array.
  */
-char *input_to_long_oct(char *bin, char *oct)
+char *input_long_oct(char *bin, char *oct)
 {
 	int n, i, j, m, max_size;
 
