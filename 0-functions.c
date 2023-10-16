@@ -12,10 +12,7 @@
 
 int print_character(va_list arg_list, char *buffer, unsigned int index)
 {
-	char c;
-
-	c = va_arg(arg_list, int);
-	_puts(buffer, c, index);
+	_puts(buffer, va_arg(arg_list, int);, index);
 
 	return (1);
 }
@@ -34,18 +31,26 @@ int print_character(va_list arg_list, char *buffer, unsigned int index)
 int print_string(va_list arg_list, char *buffer, unsigned int index)
 {
 	char *str;
-	unsigned int i;
+	unsigned int i = 0;
 	char none[] = "(null)";
 
 	str = va_arg(arg_list, char *);
 	if (str == NULL)
 	{
-		for (i = 0; none[i]; i++)
+		while (none[i] != '\0')
+		{
 			index = _puts(buffer, none[i], index);
+			i++;
+		}
 		return (6);
 	}
-	for (i = 0; str[i]; i++)
+	i = 0;
+	while (str[i] != '\0')
+	{
 		index = _puts(buffer, str[i], index);
+		i++;
+	}
+	
 	return (i);
 }
 
