@@ -72,28 +72,28 @@ int print_short_uhexa(va_list arg_list, char *buffer, unsigned int index);
 /* Task 13: Function to prints the reversed input */
 int print_reverse(va_list arg_list, char *buffer, unsigned int index);
 
-/* Task 14: Functio to */
+/* Task 14: Function to prints rot13 encode */
 int print_rot(va_list arg_list, char *buffer, unsigned int index);
 
 /**
- * struct print - struct for printer functions
- * @type_format: identifier
- * @f: pointer to a printer functions
- *
- * Description: struct that stores pointers to a
- * printer functions.
- */
-typedef struct specif
+  * struct specif - struct specifier format
+  *
+  * @type_format: Input type format
+  * @f: Input function pointer
+  */
+struct specif
 {
 	char *type_format;
 	int (*f)(va_list, char *, unsigned int);
-} specif_t;
+};
+
+typedef struct specif specif_t;
 
 /* '_putchar function' */
 unsigned int _puts(char *buffer, char c, unsigned int index);
 int _putchar(char *buffer, unsigned int index);
 
-/* */
+/* Functions to determine end send the function for a specifier */
 int (*specifier_functions(const char *s, int index))(va_list, char *, unsigned int);
 int specifiers_counter(const char *s, int index);
 
