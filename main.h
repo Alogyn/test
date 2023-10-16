@@ -57,7 +57,7 @@ int print_long_int(va_list arg_list, char *buffer, unsigned int index);
 int print_long_dig(va_list arg_list, char *buffer, unsigned int index);
 int print_long_uns(va_list arg_list, char *buffer, unsigned int index);
 int print_long_oct(va_list arg_list, char *buffer, unsigned int index);
-char *input_long_oct(char *bin, char *oct)
+char *input_long_oct(char *bin, char *oct);
 int print_long_hexa(va_list arg_list, char *buffer, unsigned int index);
 int print_long_uhexa(va_list arg_list, char *buffer, unsigned int index);
 
