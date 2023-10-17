@@ -30,7 +30,8 @@ int specifiers_counter(const char *s, int index)
 		{"hd", print_short_dig}, {"hu", print_short_uns}, {"ho", print_short_oct},
 		{"hx", print_short_hexa}, {"hX", print_short_uhexa}, {"l", print_percent},
 		{"h", print_percent}, {"R", print_rot}, {"r", print_reverse},
-		{NULL, NULL},
+		{"0", print_zero_flag}, {"-", print_minus_flag}, {".", print_precision},
+		{"*", print_width}, {NULL, NULL},
 	};
 
 	n = index;
@@ -82,7 +83,8 @@ int (*specifier_func(const char *s, int index))(va_list, char *, unsigned int)
 		{"hd", print_short_dig}, {"hu", print_short_uns}, {"ho", print_short_oct},
 		{"hx", print_short_hexa}, {"hX", print_short_uhexa}, {"l", print_percent},
 		{"h", print_percent}, {"R", print_rot}, {"r", print_reverse},
-		{NULL, NULL},
+		{"0", print_zero_flag}, {"-", print_minus_flag}, {".", print_precision},
+		{"*", print_width}, {NULL, NULL},
 	};
 
 	n = index;
