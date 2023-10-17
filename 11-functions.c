@@ -1,6 +1,6 @@
 #include "main.h"
 
-int print_zero_flag(va_list arg_list, char *buffer, unsigned int index, int width, int precision, int minus_flag)
+int print_zero_flag(va_list arg_list, char *buffer, unsigned int index)
 {
     int number = va_arg(arg_list, int);
     char temp[50];
@@ -15,7 +15,7 @@ int print_zero_flag(va_list arg_list, char *buffer, unsigned int index, int widt
     return (index);
 }
 
-int print_minus_flag(va_list arg_list, char *buffer, unsigned int index, int width, int precision, int minus_flag)
+int print_minus_flag(va_list arg_list, char *buffer, unsigned int index)
 {
     int number = va_arg(arg_list, int);
     char temp[50];
@@ -26,7 +26,7 @@ int print_minus_flag(va_list arg_list, char *buffer, unsigned int index, int wid
     return index;
 }
 
-int print_precision(va_list arg_list, char *buffer, unsigned int index, int width, int precision, int minus_flag)
+int print_precision(va_list arg_list, char *buffer, unsigned int index)
 {
     int number = va_arg(arg_list, int);
     char temp[50];

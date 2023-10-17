@@ -10,7 +10,7 @@
   * Return: The length of a binary numbers
   */
 
-int print_binary(va_list arg_list, char *buffer, unsigned int index, int width, int precision, int minus_flag)
+int print_binary(va_list arg_list, char *buffer, unsigned int index)
 {
 	int number = va_arg(arg_list, int);
 	int count = 0, i = 0, j = 0, check_negative = 0;

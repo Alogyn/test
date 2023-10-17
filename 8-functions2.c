@@ -39,7 +39,7 @@ char *input_long_oct(char *bin, char *oct)
   * Return: The length of hexadicimal output
   */
 
-int print_short_uhexa(va_list arg_list, char *buffer, unsigned int index, int width, int precision, int minus_flag)
+int print_short_uhexa(va_list arg_list, char *buffer, unsigned int index)
 {
 	short int number = va_arg(arg_list, int);
 	short int i, check_negative = 0, count, n;
@@ -114,7 +114,7 @@ char *input_short_oct(char *bin, char *oct)
   * Return: The length of hexadicimal output
   */
 
-int print_long_uhexa(va_list arg_list, char *buffer, unsigned int index, int width, int precision, int minus_flag)
+int print_long_uhexa(va_list arg_list, char *buffer, unsigned int index)
 {
 	long int number = va_arg(arg_list, long int);
 	long int i, check_negative = 0, count, n;

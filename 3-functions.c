@@ -11,7 +11,7 @@
   * Return: The length of an octal numbers
   */
 
-int print_octal(va_list arg_list, char *buffer, unsigned int index, int width, int precision, int minus_flag)
+int print_octal(va_list arg_list, char *buffer, unsigned int index)
 {
 	int number = va_arg(arg_list, int);
 	int i = 0, check_negative = 0, count, j = 0;
@@ -84,7 +84,7 @@ char *input_to_octal(char *bin, char *oct)
   * Return: The length of an integer
   */
 
-int print_unsigned(va_list arg_list, char *buffer, unsigned int index, int width, int precision, int minus_flag)
+int print_unsigned(va_list arg_list, char *buffer, unsigned int index)
 {
 	unsigned int number = va_arg(arg_list, unsigned int);
 	unsigned int i = 0, temp, diviser = 1;
@@ -113,7 +113,7 @@ int print_unsigned(va_list arg_list, char *buffer, unsigned int index, int width
   * Return: The length of an hexadicimal numbers
   */
 
-int print_lower_hexa(va_list arg_list, char *buffer, unsigned int index, int width, int precision, int minus_flag)
+int print_lower_hexa(va_list arg_list, char *buffer, unsigned int index)
 {
 	int number = va_arg(arg_list, int);
 	int i = 0, check_negative = 0, count, n = 0;
@@ -159,7 +159,7 @@ int print_lower_hexa(va_list arg_list, char *buffer, unsigned int index, int wid
   * Return: The length of an hexadicimal numbers
   */
 
-int print_upper_hexa(va_list arg_list, char *buffer, unsigned int index, int width, int precision, int minus_flag)
+int print_upper_hexa(va_list arg_list, char *buffer, unsigned int index)
 {
 	int number = va_arg(arg_list, int);
 	int i, check_negative = 0, count, n;

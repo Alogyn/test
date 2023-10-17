@@ -10,7 +10,7 @@
   * Return: Always 1 (Success)
   */
 
-int print_character(va_list arg_list, char *buffer, unsigned int index, int width, int precision, int minus_flag)
+int print_character(va_list arg_list, char *buffer, unsigned int index)
 {
 	_puts(buffer, va_arg(arg_list, int), index);
 
@@ -28,7 +28,7 @@ int print_character(va_list arg_list, char *buffer, unsigned int index, int widt
   * '6' if 'NULL'
   */
 
-int print_string(va_list arg_list, char *buffer, unsigned int index, int width, int precision, int minus_flag)
+int print_string(va_list arg_list, char *buffer, unsigned int index)
 {
 	char *str;
 	unsigned int i = 0;

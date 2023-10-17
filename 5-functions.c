@@ -10,7 +10,7 @@
   * Return: The lenh of a non-printable 'char' or 'str'
   */
 
-int print_unsigned_str(va_list arg_list, char *buffer, unsigned int index, int width, int precision, int minus_flag)
+int print_unsigned_str(va_list arg_list, char *buffer, unsigned int index)
 {
 	unsigned char *str;
 	char *hexa, *binary;

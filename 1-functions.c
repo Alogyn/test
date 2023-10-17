@@ -10,7 +10,7 @@
   * Return: The length of integers
   */
 
-int print_integer(va_list arg_list, char *buffer, unsigned int index, int width, int precision, int minus_flag)
+int print_integer(va_list arg_list, char *buffer, unsigned int index)
 {
 	int number = va_arg(arg_list, int);
 	unsigned int num, num_stored, i, diviser, negative_checker = 0;
@@ -51,7 +51,7 @@ int print_integer(va_list arg_list, char *buffer, unsigned int index, int width,
   *
   * Return: The length of digits
   */
-int print_digit(va_list arg_list, char *buffer, unsigned int index, int width, int precision, int minus_flag)
+int print_digit(va_list arg_list, char *buffer, unsigned int index)
 {
 	int number = va_arg(arg_list, int);
 	unsigned int num, num_stored, i, diviser, negative_checker = 0;

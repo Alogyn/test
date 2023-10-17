@@ -10,7 +10,7 @@
   * Return: The length of integers output
   */
 
-int print_short_int(va_list arg_list, char *buffer, unsigned int index, int width, int precision, int minus_flag)
+int print_short_int(va_list arg_list, char *buffer, unsigned int index)
 {
 	short int number = va_arg(arg_list, int);
 	unsigned short int n, temp_num, i, diviser, check_negative = 0;
@@ -49,7 +49,7 @@ int print_short_int(va_list arg_list, char *buffer, unsigned int index, int widt
   * Return: The length of digits output
   */
 
-int print_short_dig(va_list arg_list, char *buffer, unsigned int index, int width, int precision, int minus_flag)
+int print_short_dig(va_list arg_list, char *buffer, unsigned int index)
 {
 	short int number = va_arg(arg_list, int);
 	unsigned short int n, temp_num, i, diviser, check_negative = 0;
@@ -88,7 +88,7 @@ int print_short_dig(va_list arg_list, char *buffer, unsigned int index, int widt
   * Return: The length of unsigned characters output
   */
 
-int print_short_uns(va_list arg_list, char *buffer, unsigned int index, int width, int precision, int minus_flag)
+int print_short_uns(va_list arg_list, char *buffer, unsigned int index)
 {
 	unsigned short int n, temp_num, i, diviser;
 
@@ -120,7 +120,7 @@ int print_short_uns(va_list arg_list, char *buffer, unsigned int index, int widt
   * Return: The length of octal output
   */
 
-int print_short_oct(va_list arg_list, char *buffer, unsigned int index, int width, int precision, int minus_flag)
+int print_short_oct(va_list arg_list, char *buffer, unsigned int index)
 {
 	short int number = va_arg(arg_list, int);
 	short int i, check_negative = 0, count, n;
@@ -166,7 +166,7 @@ int print_short_oct(va_list arg_list, char *buffer, unsigned int index, int widt
   * Return: The length of hexadicimal output
   */
 
-int print_short_hexa(va_list arg_list, char *buffer, unsigned int index, int width, int precision, int minus_flag)
+int print_short_hexa(va_list arg_list, char *buffer, unsigned int index)
 {
 	short int number = va_arg(arg_list, int);
 	short int i, check_negative = 0, count, n;

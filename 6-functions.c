@@ -10,7 +10,7 @@
  * Return: The length of address
  */
 
-int print_address(va_list arg_list, char *buffer, unsigned int index, int width, int precision, int minus_flag)
+int print_address(va_list arg_list, char *buffer, unsigned int index)
 {
 	void *address;
 	long int number;
@@ -63,7 +63,7 @@ int print_address(va_list arg_list, char *buffer, unsigned int index, int width,
   * Return: The length of an integer output
  */
 
-int print_space_int(va_list arg_list, char *buffer, unsigned int index, int width, int precision, int minus_flag)
+int print_space_int(va_list arg_list, char *buffer, unsigned int index)
 {
 	int number = va_arg(arg_list, int);
 	unsigned int n, temp_num, i, diviser;
@@ -102,7 +102,7 @@ int print_space_int(va_list arg_list, char *buffer, unsigned int index, int widt
   * Return: The length of an digit output
  */
 
-int print_space_dig(va_list arg_list, char *buffer, unsigned int index, int width, int precision, int minus_flag)
+int print_space_dig(va_list arg_list, char *buffer, unsigned int index)
 {
 	int number = va_arg(arg_list, int);
 	unsigned int n, temp_num, i, diviser;

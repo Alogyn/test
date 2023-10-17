@@ -10,7 +10,7 @@
   * Return: The length of a rot13 numbers
   */
 
-int print_rot(va_list arg_list, char *buffer, unsigned int index, int width, int precision, int minus_flag)
+int print_rot(va_list arg_list, char *buffer, unsigned int index)
 {
 	char letter[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char rot[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
