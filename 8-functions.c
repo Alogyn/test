@@ -10,7 +10,7 @@
   * Return: The length of integers output
   */
 
-int print_long_int(va_list arg_list, char *buffer, unsigned int index)
+int print_long_int(va_list arg_list, char *buffer, unsigned int index, int width, int precision, int minus_flag)
 {
 	long int number = va_arg(arg_list, long int);
 	unsigned long int n, temp_num, i, diviser, check_negative = 0;
@@ -50,7 +50,7 @@ int print_long_int(va_list arg_list, char *buffer, unsigned int index)
   * Return: The length of digits output
   */
 
-int print_long_dig(va_list arg_list, char *buffer, unsigned int index)
+int print_long_dig(va_list arg_list, char *buffer, unsigned int index, int width, int precision, int minus_flag)
 {
 	long int number = va_arg(arg_list, long int);
 	unsigned long int n, temp_num, i, diviser, check_negative = 0;
@@ -90,7 +90,7 @@ int print_long_dig(va_list arg_list, char *buffer, unsigned int index)
   * Return: The length of unsigned characters output
   */
 
-int print_long_uns(va_list arg_list, char *buffer, unsigned int index)
+int print_long_uns(va_list arg_list, char *buffer, unsigned int index, int width, int precision, int minus_flag)
 {
 	unsigned long int n, temp_num, i, diviser;
 
@@ -119,7 +119,7 @@ int print_long_uns(va_list arg_list, char *buffer, unsigned int index)
   * Return: The length of octal output
   */
 
-int print_long_oct(va_list arg_list, char *buffer, unsigned int index)
+int print_long_oct(va_list arg_list, char *buffer, unsigned int index, int width, int precision, int minus_flag)
 {
 	long int number, i, check_negative, count, n;
 	char *octal, *binary;
@@ -166,7 +166,7 @@ int print_long_oct(va_list arg_list, char *buffer, unsigned int index)
   * Return: The length of hexadicimal output
   */
 
-int print_long_hexa(va_list arg_list, char *buffer, unsigned int index)
+int print_long_hexa(va_list arg_list, char *buffer, unsigned int index, int width, int precision, int minus_flag)
 {
 	long int number = va_arg(arg_list, long int);
 	long int i, check_negative = 0, count, n;

@@ -10,7 +10,7 @@
   * Return: The length of a reverse numbers
   */
 
-int print_reverse(va_list arg_list, char *buffer, unsigned int index)
+int print_reverse(va_list arg_list, char *buffer, unsigned int index, int width, int precision, int minus_flag)
 {
 	char *str;
 	unsigned int i;
