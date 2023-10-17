@@ -81,7 +81,7 @@ int print_long_dig(va_list arg_list, char *buffer, unsigned int index)
 }
 
 /**
-  * print_long_int - Prints long unsigned characters
+  * print_long_uns - Prints long unsigned characters
   *
   * @arg_list: Input unsigned characters argument (int)
   * @buffer: Buffer array (char)

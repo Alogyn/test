@@ -1,12 +1,15 @@
 #include "main.h"
 
 /**
- * print_reverse - writes the str in reverse
- * @arg_list: input string
- * @buffer: buffer pointer
- * @index: index for buffer pointer
- * Return: number of chars printed.
- */
+  * print_binary - Prints string in reverse
+  *
+  * @arg_list: Input integers argument (int)
+  * @buffer: Buffer array (char)
+  * @index: Number of buffer index (int)
+  *
+  * Return: The length of a reverse numbers
+  */
+
 int print_reverse(va_list arg_list, char *buffer, unsigned int index)
 {
 	char *str;
