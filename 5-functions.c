@@ -12,32 +12,27 @@
 
 int print_unsigned_str(va_list arg_list, char *buffer, unsigned int index)
 {
-	unsigned char *str;
-	char *hexa, *binary;
-	unsigned int i, sum = 1, n;
+	unsigned char *str = va_arg(arg_list, unsigned char *);
+	int count = 0;
+	unsigned int i;
 
-	str = va_arg(arg_list, unsigned char *);
-	binary = malloc(sizeof(char) * (32 + 1));
-	hexa = malloc(sizeof(char) * (8 + 1));
 	for (i = 0; str[i]; i++)
 	{
 		if (str[i] < 32 || str[i] >= 127)
 		{
-			index = _puts(buffer, '\\', index);
-			index = _puts(buffer, 'x', index);
-			n = str[i];
-			binary = input_to_binary(binary, n, 0, 32);
-			hexa = input_to_hexa(binary, hexa, 1, 8);
-			index = _puts(buffer, hexa[6], index);
-			index = _puts(buffer, hexa[7], index);
-			sum += 3;
+			buffer[index++] = '\\';
+			buffer[index++] = 'x';
+			buffer[index++] = (str[i] / 16) + ((str[i] / 16 > 9) ? 'A' - 10 : '0');
+			buffer[index++] = (str[i] % 16) + ((str[i] % 16 > 9) ? 'A' - 10 : '0');
+			count += 4;
 		}
 		else
-			index = _puts(buffer, str[i], index);
+		{
+			buffer[index++] = str[i];
+			count++;
+		}
 	}
-	free(binary);
-	free(hexa);
-	return (i + sum);
+	return (count);
 }
 
 /**
