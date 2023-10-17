@@ -19,7 +19,9 @@ int print_minus_flag(va_list arg_list, char *buffer, unsigned int index, int min
 {
     int number = va_arg(arg_list, int);
     char temp[50];
-
+	int width = 10; 
+	int precision = 2
+	
     snprintf(temp, sizeof(temp), "%-*.*d", width, precision, number);
 
     index = _puts(buffer, temp, index);
