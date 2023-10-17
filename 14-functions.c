@@ -1,12 +1,14 @@
 #include "main.h"
 
 /**
- * print_rot - writes the str in ROT13
- * @arg_list: input string
- * @buffer: buffer pointer
- * @index: index for buffer pointer
- * Return: number of chars printed.
- */
+  * print_rot - Prints string in rot13 encoding
+  *
+  * @arg_list: Input integers argument (int)
+  * @buffer: Buffer array (char)
+  * @index: Number of buffer index (int)
+  *
+  * Return: The length of a rot13 numbers
+  */
 
 int print_rot(va_list arg_list, char *buffer, unsigned int index)
 {

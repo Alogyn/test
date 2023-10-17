@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-  * print_binary - Prints string in reverse
+  * print_reverse - Prints string in reverse
   *
   * @arg_list: Input integers argument (int)
   * @buffer: Buffer array (char)
