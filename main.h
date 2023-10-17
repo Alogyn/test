@@ -99,8 +99,8 @@ int (*specifier_func(const char *s, int index))(va_list, char *, unsigned int);
 int specifiers_counter(const char *s, int index);
 
 int print_zero_flag(va_list arg_list, char *buffer, unsigned int index);
-int print_minus_flag(va_list arg_list, char *buffer, unsigned int index);
-int print_precision(va_list arg_list, char *buffer, unsigned int index);
-int print_width(va_list arg_list, char *buffer, unsigned int index, int width, int precision, int minus_flag);
+int print_minus_flag(va_list arg_list, char *buffer, unsigned int index, int minus_flag);
+int print_precision(va_list arg_list, char *buffer, unsigned int index, int precision);
+int print_width(va_list arg_list, char *buffer, unsigned int index, int width);
 
 #endif /* MAIN_H */

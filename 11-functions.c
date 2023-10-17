@@ -15,7 +15,7 @@ int print_zero_flag(va_list arg_list, char *buffer, unsigned int index)
     return (index);
 }
 
-int print_minus_flag(va_list arg_list, char *buffer, unsigned int index)
+int print_minus_flag(va_list arg_list, char *buffer, unsigned int index, int minus_flag)
 {
     int number = va_arg(arg_list, int);
     char temp[50];
@@ -26,7 +26,7 @@ int print_minus_flag(va_list arg_list, char *buffer, unsigned int index)
     return index;
 }
 
-int print_precision(va_list arg_list, char *buffer, unsigned int index)
+int print_precision(va_list arg_list, char *buffer, unsigned int index, int precision)
 {
     int number = va_arg(arg_list, int);
     char temp[50];
@@ -37,7 +37,7 @@ int print_precision(va_list arg_list, char *buffer, unsigned int index)
     return index;
 }
 
-int print_width(va_list arg_list, char *buffer, unsigned int index, int width, int precision, int minus_flag)
+int print_width(va_list arg_list, char *buffer, unsigned int index, int width)
 {
     char temp[50];
 	
