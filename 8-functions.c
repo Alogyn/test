@@ -41,7 +41,7 @@ int print_long_int(va_list arg_list, char *buffer, unsigned int index)
 }
 
 /**
-  * print_long_int - Prints long digits
+  * print_long_dig - Prints long digits
   *
   * @arg_list: Input digits argument (int)
   * @buffer: Buffer array (char)
@@ -109,6 +109,15 @@ int print_long_uns(va_list arg_list, char *buffer, unsigned int index)
 	return (i);
 }
 
+/**
+  * print_long_oct - Prints long octal
+  *
+  * @arg_list: Input octal argument (int)
+  * @buffer: Buffer array (char)
+  * @index: Number of buffer index (int)
+  *
+  * Return: The length of octal output
+  */
 
 int print_long_oct(va_list arg_list, char *buffer, unsigned int index)
 {
@@ -148,7 +157,7 @@ int print_long_oct(va_list arg_list, char *buffer, unsigned int index)
 }
 
 /**
-  * print_long_int - Prints long hexadicimal
+  * print_long_hexa - Prints long hexadicimal
   *
   * @arg_list: Input hexadicimal argument (int)
   * @buffer: Buffer array (char)
@@ -178,52 +187,6 @@ int print_long_hexa(va_list arg_list, char *buffer, unsigned int index)
 	binary = input_to_binary(binary, number, check_negative, 64);
 	hexa = malloc(sizeof(char) * (16 + 1));
 	hexa = input_to_hexa(binary, hexa, 0, 16);
-	for (n = i = count = 0; hexa[i]; i++)
-	{
-		if (hexa[i] != '0' && n == 0)
-			n = 1;
-		if (n)
-		{
-			index = _puts(buffer, hexa[i], index);
-			count++;
-		}
-	}
-	free(binary);
-	free(hexa);
-	return (count);
-}
-
-/**
-  * print_long_int - Prints long hexadicimal
-  *
-  * @arg_list: Input hexadicimal argument (int)
-  * @buffer: Buffer array (char)
-  * @index: Number of buffer index (int)
-  *
-  * Return: The length of hexadicimal output
-  */
-
-int print_long_uhexa(va_list arg_list, char *buffer, unsigned int index)
-{
-	long int number = va_arg(arg_list, long int);
-	long int i, check_negative = 0, count, n;
-	char *hexa, *binary;
-
-	if (number == 0)
-	{
-		index = _puts(buffer, '0', index);
-		return (1);
-	}
-	if (number < 0)
-	{
-		number = (number * -1) - 1;
-		check_negative = 1;
-	}
-
-	binary = malloc(sizeof(char) * (64 + 1));
-	binary = input_to_binary(binary, number, check_negative, 64);
-	hexa = malloc(sizeof(char) * (16 + 1));
-	hexa = input_to_hexa(binary, hexa, 1, 16);
 	for (n = i = count = 0; hexa[i]; i++)
 	{
 		if (hexa[i] != '0' && n == 0)
