@@ -53,7 +53,8 @@ int print_binary(va_list arg_list, char *buffer, unsigned int index)
   * Return: The length of a binary numbers
   */
 
-char *input_to_binary(char *binary, long int number, int check_negative, int max_size)
+char *input_to_binary(char *binary, long int number,
+		int check_negative, int max_size)
 {
 	int i = 0;
 

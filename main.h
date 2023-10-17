@@ -21,19 +21,20 @@ int print_digit(va_list arg_list, char *buffer, unsigned int index);
 
 /* Task 2: Functions to convertes and prints integers to binary */
 int print_binary(va_list arg_list, char *buffer, unsigned int index);
-char *input_to_binary(char *binary, long int number, int check_negative, int max_size);
+char *input_to_binary(char *binary, long int number,
+		int check_negative, int max_size);
 
-/* Task 3: Functions to convertes and prints integers to octal and unsigned integer */
+/* Task 3: Functions to convertes and prints int to oct and unsigned int */
 int print_octal(va_list arg_list, char *buffer, unsigned int index);
 char *input_to_octal(char *bin, char *oct);
 int print_unsigned(va_list arg_list, char *buffer, unsigned int index);
 
-/* Task 3: Functions to convertes and prints integers to upper and lower hexadicimal */
+/* Task 3: Functions to convertes and prints integer to upper and lower hexa */
 int print_lower_hexa(va_list arg_list, char *buffer, unsigned int index);
 int print_upper_hexa(va_list arg_list, char *buffer, unsigned int index);
 char *input_to_hexa(char *bin, char *hex, int check_upper, int max_size);
 
-/* Task 4: Functions to minimises the use of 'write()' and prints the 'char' or 'str'*/
+/* Task 4: Functions to minimises the use of 'write()' and prints the 'char' */
 unsigned int _puts(char *buffer, char c, unsigned int index);
 int _putchar(char *buffer, unsigned int index);
 

@@ -65,7 +65,8 @@ int print_string(va_list arg_list, char *buffer, unsigned int index)
   * Return: Always 1 (Success)
   */
 
-int print_percent(va_list a __attribute__((unused)), char *buffer, unsigned int i)
+int print_percent(va_list a __attribute__((unused)),
+		char *buffer, unsigned int i)
 {
 	_puts(buffer, '%', i);
 

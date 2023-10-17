@@ -54,7 +54,7 @@ int print_address(va_list arg_list, char *buffer, unsigned int index)
 }
 
 /**
-  * print_space - Prints integers with ' ' flag
+  * print_space_int - Prints integers with ' ' flag
   *
   * @arg_list: Input integers argument (int)
   * @buffer: Buffer array (char)

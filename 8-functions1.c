@@ -48,7 +48,7 @@ int print_short_int(va_list arg_list, char *buffer, unsigned int index)
   *
   * Return: The length of digits output
   */
- 
+
 int print_short_dig(va_list arg_list, char *buffer, unsigned int index)
 {
 	short int number = va_arg(arg_list, int);
@@ -111,7 +111,7 @@ int print_short_uns(va_list arg_list, char *buffer, unsigned int index)
 }
 
 /**
-  * print_short-oct - Prints short octal
+  * print_short_oct - Prints short octal
   *
   * @arg_list: Input octal argument (int)
   * @buffer: Buffer array (char)

@@ -7,7 +7,7 @@
   * @buffer: Buffer array (char)
   * @index: Number of buffer index (int)
   *
-  * Return: The length of integers 
+  * Return: The length of integers
  */
 
 int print_plus_int(va_list arg_list, char *buffer, unsigned int index)
@@ -46,7 +46,7 @@ int print_plus_int(va_list arg_list, char *buffer, unsigned int index)
   * @buffer: Buffer array (char)
   * @index: Number of buffer index (int)
   *
-  * Return: The length of digits 
+  * Return: The length of digits
  */
 
 int print_plus_dig(va_list arg_list, char *buffer, unsigned int index)

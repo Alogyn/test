@@ -39,11 +39,11 @@ int _printf(const char *format, ...)
 					char_counter += funct(arg_list, temp, index);
 					i += specifiers_counter(format, i + 1);
 				}
-			} i++;
+			}
 			else
 			{	_putchar(temp, index), free(temp), va_end(arg_list);
 				return (-1);
-			}
+			} i++;
 		}
 		for (index = char_counter; index > 1024; index -= 1024)
 			;

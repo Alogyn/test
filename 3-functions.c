@@ -75,7 +75,7 @@ char *input_to_octal(char *bin, char *oct)
 }
 
 /**
-  * print_unt - prints an unsigned int
+  * print_unsigned - Prints an unsigned int
   *
   * @arg_list: number to print
   * @buffer: buffer pointer
