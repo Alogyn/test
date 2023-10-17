@@ -2,12 +2,12 @@
 
 int print_zero_flag(va_list arg_list, char *buffer, unsigned int index)
 {
-    int number = va_arg(arg_list, int);
+    int number = va_arg(arg_list, int), i;
     char temp[50];
     
     snprintf(temp, sizeof(temp), "%0*d", width, number);
     
-    for (int i = 0; temp[i] != '\0'; ++i)
+    for (i = 0; temp[i] != '\0'; ++i)
     {
         buffer[index++] = temp[i];
     }
@@ -23,7 +23,7 @@ int print_minus_flag(va_list arg_list, char *buffer, unsigned int index, int min
     snprintf(temp, sizeof(temp), "%-*.*d", width, precision, number);
 
     index = _puts(buffer, temp, index);
-    return index;
+    return (index);
 }
 
 int print_precision(va_list arg_list, char *buffer, unsigned int index, int precision)
@@ -34,7 +34,7 @@ int print_precision(va_list arg_list, char *buffer, unsigned int index, int prec
     snprintf(temp, sizeof(temp), "%*.*d", width, precision, number);
 
     index = _puts(buffer, temp, index);
-    return index;
+    return (index);
 }
 
 int print_width(va_list arg_list, char *buffer, unsigned int index, int width)
@@ -51,5 +51,5 @@ int print_width(va_list arg_list, char *buffer, unsigned int index, int width)
     }
     
     index = _puts(buffer, temp, index);
-    return index;
+    return (index);
 }
