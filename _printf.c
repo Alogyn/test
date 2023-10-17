@@ -20,15 +20,13 @@ int _printf(const char *format, ...)
 		return (-1);
 	if (!format[i])
 		return (0);
-	for (i = 0; format && format[i]; i++)
+	for (i = 0; format[i]; i++)
 	{
-		if (format[i] == '%')
+		if (format[i] != '%')
+			_puts(temp, format[i], index), char_counter++;
+		else
 		{
-			if (format[i + 1] == '\0')
-			{	_putchar(temp, index), free(temp), va_end(arg_list);
-				return (-1);
-			}
-			else
+			if (format[i + 1] != '\0')
 			{	funct = specifier_func(format, i + 1);
 				if (funct == NULL)
 				{
@@ -42,9 +40,11 @@ int _printf(const char *format, ...)
 					i += specifiers_counter(format, i + 1);
 				}
 			} i++;
+			else
+			{	_putchar(temp, index), free(temp), va_end(arg_list);
+				return (-1);
+			}
 		}
-		else
-			_puts(temp, format[i], index), char_counter++;
 		for (index = char_counter; index > 1024; index -= 1024)
 			;
 	}
