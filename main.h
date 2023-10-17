@@ -6,7 +6,6 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include <unistd.h>
-#include <string.h>
 
 /* '_printf.c' function */
 int _printf(const char *format, ...);
@@ -86,7 +85,7 @@ int print_rot(va_list arg_list, char *buffer, unsigned int index);
 struct specif
 {
 	char *type_format;
-	int (*f)();
+	int (*f)(va_list, char *, unsigned int);
 };
 
 typedef struct specif specif_t;
@@ -98,10 +97,5 @@ int _putchar(char *buffer, unsigned int index);
 /* Functions to determine end send the function for a specifier */
 int (*specifier_func(const char *s, int index))(va_list, char *, unsigned int);
 int specifiers_counter(const char *s, int index);
-
-int print_zero_flag(va_list arg_list, char *buffer, unsigned int index);
-int print_minus_flag(va_list arg_list, char *buffer, unsigned int index, int minus_flag);
-int print_precision(va_list arg_list, char *buffer, unsigned int index, int precision);
-int print_width(va_list arg_list, char *buffer, unsigned int index, int width);
 
 #endif /* MAIN_H */
